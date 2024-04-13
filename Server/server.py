@@ -68,7 +68,7 @@ def delete_products(index):
 @app.patch("/api/products/<int:index>")
 def patch_products(index):
     updated_field = request.get_json()
-    if 0<= index < len(products):
+    if 0<= index < len(products): 
         products(index).update(updated_field)
         return json.dumps(updated_field)
     else:
