@@ -8,15 +8,13 @@ print(varstring + str(varname))
 # if(varstring == "adrian")
 # {
 # }
-
 age = 37
 if age < 30:
     print("youre young")
 elif age > 30:
     print("no worrys youre still young")
 else:
-    print("i dont know how you get here")
-    
+    print("i dont know how you get here")    
 #array
 #const colors = ["red", "green", "blue"];
 #list
@@ -27,14 +25,11 @@ print(colors)
 colors.remove("red")
 print(colors)
 print(colors[1])
-
 # for(int i = 0; i <colors.length; i++)
 #   let color = colors[i];
 #   console.log(color);
-
 for x in colors:
     print(x)
-
 #dictionarys
 me = {
     "first_name": "John",
@@ -47,7 +42,6 @@ print(me["first_name"])
 me["age"]=99
 me["favorite_color"]="blue"
 print(me)
-
 #fuctions
 def say_hello():
     print("hello")
@@ -64,8 +58,7 @@ def print_menu():
     print("1)sum")
     print("2)substraction")
     print("3)multiplication")
-    print("4)division")
-    
+    print("4)division")    
 #instructions
 print_menu()
 opt = int(input("Choose an option: "))

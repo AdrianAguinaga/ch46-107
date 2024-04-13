@@ -1,0 +1,14 @@
+to create a virtual environment we need to
+-py or python3 -m pip install virtualenv
+now that we have a virtual environment library,
+we want to create a virtual environment
+-py or python3 -m venv (name of a folder)
+now we need to activate the virtual environment
+if youre running a MAC
+-source venv/bin/activate
+if youre running a windows
+-venv\Scripts\activate
+****REMEMBER THAT YOU NEED TO BE LOCATED IN TO THE 
+folder OF THE PROJECT*******
+
+
