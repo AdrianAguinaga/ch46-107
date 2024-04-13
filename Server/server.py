@@ -1,5 +1,6 @@
 from flask import Flask, request
 import json
+from config import db
 
 app = Flask(__name__)
 
@@ -25,19 +26,26 @@ def versions():
 def admin():
     return "hello im the admin"
 
-products = []
 @app.get("/api/products")
 def get_products():
+    products = []
+    cursor = db.products.find({})
+    for prod in cursor:
+        products.append(fix_id(prod))
     return json.dumps(products)
 
+def fix_id(obj):
+    obj["_id"] =str(obj["_id"])
+    return obj
 
 @app.post("/api/products")
 def save_products():
     prod = request.get_json()
     print (prod)
     #mock save
-    products.append(prod)
-    return json.dumps(prod)
+    # products.append(prod)    
+    db.products.insert_one(prod)
+    return json.dumps(fix_id(prod))
 
 @app.put("/api/products/<int:index>")
 def update_products(index):
@@ -65,6 +73,11 @@ def patch_products(index):
         return json.dumps(updated_field)
     else:
         return "That index does not exist"
+    
+@app.get("/api/footer")
+def get_footer():
+    return "hello im the footer"
+
     
 # use the same logic but remember that you need to 
 # use list.pop
